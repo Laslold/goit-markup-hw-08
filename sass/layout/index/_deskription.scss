@@ -1,0 +1,57 @@
+.deskription {
+  padding-top: 200px;
+ 
+  text-align: center;
+  background-color: $color-bg-footer;
+
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+&__title {
+  box-sizing: content-box;
+  margin: 0;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: $white-color;
+  text-transform: uppercase;
+}
+
+
+&__button {
+  display: inline-block;
+  margin-top: 30px;
+  min-width: 215px;
+  border-radius: 4px;
+  padding: 10px 32px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: $color-box-shadow;
+  border-color: transparent;
+  color: $white-color;
+  background-color: $accent-color;
+  transition: background-color 250ms $time-cube;
+  &:hover,
+  &:focus {
+    background-color: $back-accent-color;
+  }
+}
+}
+
