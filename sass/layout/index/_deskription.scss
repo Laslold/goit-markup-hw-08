@@ -1,10 +1,10 @@
 .deskription {
-  padding-top: 200px;
- 
+  padding-top: 118px;
+
   text-align: center;
   background-color: $color-bg-footer;
+  height: 400px;
 
-  height: 600px;
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -13,45 +13,105 @@
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url(../images/hero2.jpg);
+    url(../../../images/hero/mobil/hero@1x.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
+  @media screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../../../images/hero/mobil/hero@2x.jpg);
+  }
 
-&__title {
-  box-sizing: content-box;
-  margin: 0;
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  text-align: center;
-  letter-spacing: 0.06em;
-  color: $white-color;
-  text-transform: uppercase;
-}
+  @media screen and (min-width: $tablet) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../../../images/hero/tablet/hero1x.jpg);
 
+    @media screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../../../images/hero/tablet/hero2x.jpg);
+    }
 
-&__button {
-  display: inline-block;
-  margin-top: 30px;
-  min-width: 215px;
-  border-radius: 4px;
-  padding: 10px 32px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: $color-box-shadow;
-  border-color: transparent;
-  color: $white-color;
-  background-color: $accent-color;
-  transition: background-color 250ms $time-cube;
-  &:hover,
-  &:focus {
-    background-color: $back-accent-color;
+    @media screen and (min-width: $desktop) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../../../images/hero/desktop/hero1x.jpg);
+      height: 600px;
+      padding-top: 200px;
+
+      @media screen and (min-resolution: 2dppx) {
+        background-image: linear-gradient(
+            to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)
+          ),
+          url(../../../images/hero/desktop/hero2x.jpg);
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 600px;
+  }
+
+  &__title {
+    box-sizing: content-box;
+    margin: 0;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.62;
+
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: $white-color;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 44px;
+      line-height: 1.36;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: 30px;
+    min-width: 200px;
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: $color-box-shadow;
+    border-color: transparent;
+    color: $white-color;
+    background-color: $accent-color;
+    transition: background-color 250ms $time-cube;
+
+    &:hover,
+    &:focus {
+      background-color: $back-accent-color;
+    }
+
+    @media screen and (min-width: 769px) {
+      min-width: 215px;
+      padding: 10px 32px;
+    }
   }
 }
-}
-

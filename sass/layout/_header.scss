@@ -1,5 +1,252 @@
 .page-header {
-  .container{
-  @include flex_center;}
-} 
+  position: relative;
+}
 
+.main {
+  @include flex_center;
+  justify-content: space-between;
+  height: 60px;
+
+  @media screen and (min-width: $tablet) {
+    height: 80px;
+  }
+
+  &__logo {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+    color: $text-logo-header;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 26px;
+      line-height: 1.19;
+    }
+
+    span {
+      color: $accent-color;
+    }
+  }
+}
+
+.btn-mobil {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  background-color: transparent;
+  z-index: 5;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+
+  .icon-close {
+    display: none;
+  }
+
+  &.is-open .icon-close {
+    display: block;
+  }
+
+  &.is-open .icon-menu {
+    display: none;
+  }
+}
+
+.navigation {
+  display: none;
+
+  &.is-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white-color;
+    padding-left: 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menu {
+  display: flex;
+
+  flex-direction: column;
+  gap: 32px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    gap: 32px;
+    margin-right: 96px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 315px;
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: $title-text-color;
+    transition: color 250ms $time-cube;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+
+    @media screen and (min-width: $tablet) {
+      font-size: 14px;
+      line-height: 1.14;
+      padding: 32px 0 32px;
+    }
+
+    &.current {
+      color: $accent-color;
+
+      @media screen and (min-width: $tablet) {
+        &::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 4px;
+          left: 0;
+          bottom: 0;
+          border-radius: 2px;
+          background-color: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+.address {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 32px;
+  margin-bottom: 64px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 0;
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__mail {
+    @include flex_center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.16;
+    color: $primary-text-color;
+    transition: color 250ms $time-cube;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
+  }
+
+  &__phone {
+    @include flex_center;
+    width: 80vw;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.17;
+    color: $accent-color;
+    letter-spacing: 0.02em;
+    transition: color 250ms $time-cube;
+
+    @media screen and (min-width: 768px) {
+      width: auto;
+      font-size: 14px;
+      line-height: 1.14;
+      color: $primary-text-color;
+
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__mailicon {
+    display: none;
+    width: 16px;
+    height: 12px;
+    margin-right: 8px;
+    align-items: center;
+    fill: currentColor;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__phoneicon {
+    display: none;
+    width: 10px;
+    height: 16px;
+    margin-right: 8px;
+
+    fill: currentColor;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.social-mobil {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &__item {
+    display: inline;
+    border-left: 1px solid #bbb;
+    padding: 0 10px;
+
+    &:first-child {
+      border: none;
+      padding-left: 0;
+    }
+  }
+}

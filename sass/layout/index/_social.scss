@@ -1,12 +1,11 @@
 .social {
   display: flex;
-
+  margin-top: 16px;
 
 
 &__list {
   @include flex_center;
   width: 206px;
-  margin-top: 16px
   
 }
 
@@ -24,16 +23,8 @@
     color: $white-color;
     background-color: $accent-color;
   }
-}
 
-
-&__icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-&__link--attach {
+  &--attach {
   @include flex_center;
   justify-content: center;
   width: 44px;
@@ -48,6 +39,16 @@
     background-color: $accent-color;
   }
 }
+}
+
+
+&__icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+
 }
 .social__items+.social__items {
   margin-left: 10px;

@@ -4,10 +4,11 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 20;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms $time-cube, visibility 250ms $time-cube;
   opacity: 1;
- }
+}
 
 .backdrop.is-hidden {
   opacity: 0;
@@ -17,8 +18,9 @@
 
 .modal {
   position: relative;
-  width: 528px;
-  height: 581px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
   left: 50%;
   top: 50%;
   background-color: $white-color;
@@ -30,39 +32,48 @@
   opacity: 1;
   visibility: visible;
 
+  @media screen and (min-width: $mobil) {
+    width: 450px;
+    height: 609px;
+  }
 
-&__btn {
- 
-  @include flex_center;
-   position: fixed;
-  justify-items: center;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: $white-color;
-  cursor: pointer;
-  transition: color 250ms $time-cube;
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+    height: 581px;
+  }
 
-  &:hover,
-  &:focus {
-    color: $accent-color;
+  &__btn {
+    @include flex_center;
+    position: fixed;
+    justify-items: center;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: $white-color;
+    cursor: pointer;
+    transition: color 250ms $time-cube;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    fill: currentColor;
   }
 }
 
-&__icon {
-  width: 30px;
-  height: 30px;
-  list-style: none;
-  fill: currentColor;
-}
-}
 .modal-form {
   @include flex_center;
   flex-direction: column;
-  
+
   padding: 40px;
   font-weight: 400;
   font-size: 12px;
@@ -82,74 +93,90 @@
     color: $title-text-color;
   }
 
-&__fild {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-&__input {
-  width: 448px;
-  height: 40px;
-  margin-top: 4px;
-  padding-left: 42px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  font-size: 14px;
-  transition: border-color 250ms $time-cube;
-
-  &:focus {
-    outline: none;
-    border-color: $accent-color;
-  }
-}
-
-&__icon {
-  position: absolute;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  bottom: 11px;
-  left: 12px;
-  list-style: none;
-  fill: currentColor;
-  transition: color 250ms $time-cube;
-
-  .modal-form__input:focus+& {
-    color: $back-accent-color;
-  }
-}
-
-&__comment {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-
-  &::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
+  &__fild {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
   }
 
-  textarea {
+  &__input {
+    width: 70vw;
+    height: 40px;
     margin-top: 4px;
-    padding: 12px 16px;
-    width: 448px;
-    height: 120px;
+    padding-left: 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    resize: none;
+    font-size: 14px;
     transition: border-color 250ms $time-cube;
 
     &:focus {
       outline: none;
       border-color: $accent-color;
     }
+
+    @media screen and (min-width: $mobil) {
+      width: 370px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 448px;
+    }
   }
-}
+
+  &__icon {
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    bottom: 11px;
+    left: 12px;
+    list-style: none;
+    fill: currentColor;
+    transition: color 250ms $time-cube;
+
+    .modal-form__input:focus + & {
+      color: $back-accent-color;
+    }
+  }
+
+  &__comment {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.16;
+      letter-spacing: 0.01em;
+      color: rgba(117, 117, 117, 0.5);
+    }
+
+    textarea {
+      margin-top: 4px;
+      padding: 12px 16px;
+      width: 70vw;
+      height: 120px;
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      border-radius: 4px;
+      resize: none;
+      transition: border-color 250ms $time-cube;
+
+      &:focus {
+        outline: none;
+        border-color: $accent-color;
+      }
+
+      @media screen and (min-width: $mobil) {
+        width: 370px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        width: 448px;
+      }
+    }
+  }
 }
 
 .politic {
@@ -157,51 +184,56 @@
   margin-top: 20px;
   margin-bottom: 30px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.16;
   letter-spacing: 0.03em;
   color: $primary-text-color;
 
   a {
     margin-left: 4px;
     color: $accent-color;
-    text-underline-position: under;
+    text-decoration: underline;
   }
 
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 
-&__label {
-  @include flex_center;
-  cursor: pointer;
-}
+  &__label {
+    @include flex_center;
+    cursor: pointer;
+  }
 
-&__checkbox {
-  appearance: none;
-  position: absolute;
-}
+  &__checkbox {
+    appearance: none;
+    position: absolute;
+  }
 
-&__icon {
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  margin-right: 7px;
-  border: 2px solid $title-text-color;
-  border-radius: 2px;
+  &__icon {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    border: 2px solid $title-text-color;
+    border-radius: 2px;
 
-  .politic__checkbox:checked+& {
-    padding-top: 1px;
-    background-color: $accent-color;
-    background-image: url(../images/Vector.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-origin: content-box;
-    border-color: $accent-color;
+    .politic__checkbox:checked + & {
+      padding-top: 1px;
+      background-color: $accent-color;
+      background-image: url(../images/Vector.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-origin: content-box;
+      border-color: $accent-color;
+    }
   }
 }
-}
+
 .form-button {
   display: inline-block;
   min-width: 200px;
-  padding: 10px 52px;
+  height: 50px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;

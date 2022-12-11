@@ -1,45 +1,56 @@
 .client {
-padding-top: 94px;
-padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
-
-&__list {
-  display: flex;
-}
-
-&__item {
-  @include flex_center;
-  justify-content: center;
- 
-  margin: 0;
-}
-
-&__link {
-  display: inline-flex;
-  align-items: center;
-  height: 92px;
-  width: 170px;
-  border: 1px solid;
-  border-radius: 4px;
-
-  color: $color-icon-primary;
-  transition: color 250ms $time-cube;
-
-  &:hover,
-  &:focus {
-    color: $accent-color;
+  @media screen and (min-width:$desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
   }
-}
 
-&__icon {
-  width: 170px;
-  height: 60px;
-  margin: 0;
-  padding: 0;
-  fill: currentColor;
-  list-style: none;
-}
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 
-&__item+&__item {
-  margin-left: 30px;
-}}
+  }
+
+  &__item {
+    @include flex_center;
+    justify-content: center;
+
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 92px;
+    width: 210px;
+
+    border: 1px solid;
+    border-radius: 4px;
+
+    color: $color-icon-primary;
+    transition: color 250ms $time-cube;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+
+    @media screen and (min-width:$desktop) {
+      width: 170px;
+    }
+  }
+
+  &__icon {
+    width: 170px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    fill: currentColor;
+    list-style: none;
+  }
+
+}

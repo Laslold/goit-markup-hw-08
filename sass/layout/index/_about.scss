@@ -1,18 +1,28 @@
 .about {
  
   margin-bottom: 0;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: $color-about;
+  @media screen and (min-width:$desktop){
+    padding-top: 94px;
+  padding-bottom: 94px;
+}
 
 
 &__list {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
   color: $primary-text-color;
+  @media screen and (min-width:$tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 &__title {
@@ -37,7 +47,16 @@
   padding-bottom: 30px;
 }
 
-&__item + &__item {
-  margin-left: 30px;
+&__img{
+  @media screen and(max-width:$mobil) {
+    width: 100%;
+  }
+  @media screen and (min-width:$tablet) {
+    width:354px ;
+  }
+  @media screen and (min-width:$desktop) {
+    width:270px ;
+  }
 }
+
 }
