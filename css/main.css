@@ -134,13 +134,10 @@ ul {
 }
 
 .navigation {
-  display: none;
-}
-.navigation.is-open {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -150,11 +147,23 @@ ul {
   padding-top: 48px;
   padding-bottom: 48px;
   z-index: 1;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+.navigation.is-open {
+  transform: translateX(0);
 }
 @media screen and (min-width: 767.98px) {
   .navigation {
     display: flex;
     align-items: center;
+    transform: none;
+    position: unset;
+    flex-direction: row;
+    width: unset;
+    height: unset;
+    padding: 0;
+    opacity: 1;
   }
 }
 
