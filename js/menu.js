@@ -19,6 +19,7 @@
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
     if (!e.matches) return;
     mobileMenuRef.classList.remove('is-open');
+    menuBtnRef.classList.remove('is-open');
     menuBtnRef.setAttribute('aria-expanded', false);
     bodyScrollLock.enableBodyScroll(document.body);
   });

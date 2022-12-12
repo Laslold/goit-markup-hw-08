@@ -261,7 +261,7 @@ ul {
   align-items: center;
   width: 80vw;
   font-weight: 500;
-  font-size: 34px;
+  font-size: 8vw;
   line-height: 1.17;
   color: #2196f3;
   letter-spacing: 0.02em;
@@ -1048,7 +1048,6 @@ ul {
 .modal {
   position: relative;
   width: 100vw;
-  height: 100vh;
   overflow-y: auto;
   left: 50%;
   top: 50%;
